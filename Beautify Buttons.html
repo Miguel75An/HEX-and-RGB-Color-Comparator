@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beautify Buttons</title>
+    <style type="text/css">
+        .myButton {
+            -moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+            -webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+            box-shadow:inset 0px 1px 0px 0px #97c4fe;
+            background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0));
+            background:-moz-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background:-webkit-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background:-o-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background:-ms-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0',GradientType=0);
+            background-color:#3d94f6;
+            -moz-border-radius:6px;
+            -webkit-border-radius:6px;
+            border-radius:6px;
+            border:1px solid #337fed;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:15px;
+            font-weight:bold;
+            padding:6px 24px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #1570cd;
+        }
+        .myButton:hover {
+            background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
+            background:-moz-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+            background:-webkit-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+            background:-o-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+            background:-ms-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+            background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6',GradientType=0);
+            background-color:#1e62d0;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Beautify Buttons</h1>
+
+<div>
+
+    <!--The following becomes our new button defined by the styles defined in the header
+    notice we can still use the ONCLICK property like in the regular buttons-->
+    <a href="#" class="myButton" onclick="disabler1()">HEX</a>
+
+    <strong>Hexadecimal</strong>: <input type="text" class="hexTextc" id="HexText" value="#HexColorHere">
+</div>
+
+<br><br/>
+
+<div>
+    <a href="#" class="myButton" onclick="disabler2()">RGB</a>
+    <strong>R</strong>: <input type="text" class="rgbText" id="rgbText1" value="">
+    <strong>G</strong>: <input type="text" class="rgbText" id="rgbText2" value="">
+    <strong>B</strong>: <input type="text" class="rgbText" id="rgbText3" value="">
+</div>
+
+<script>
+
+    //Initial state of text fields
+    document.getElementById('HexText').disabled = false;
+    document.getElementById('rgbText1').disabled = true;
+    document.getElementById('rgbText2').disabled = true;
+    document.getElementById('rgbText3').disabled = true;
+
+    function disabler1()
+    {
+        if(document.getElementById('HexText').disabled === false)
+        {
+            //do nothing
+        }
+        else
+        {    //Enable hexfield
+            document.getElementById('HexText').disabled = false;
+            //Disable RGB fields
+            document.getElementById('rgbText1').disabled = true;
+            document.getElementById('rgbText2').disabled = true;
+            document.getElementById('rgbText3').disabled = true;
+        }
+    }
+
+    function disabler2()
+    {
+        if(document.getElementById('HexText').disabled === false)
+        {
+            //Enable RBG text fields
+            document.getElementById('rgbText1').disabled = false;
+            document.getElementById('rgbText2').disabled = false;
+            document.getElementById('rgbText3').disabled = false;
+            //Disable Hex text field
+            document.getElementById('HexText').disabled = true;
+        }
+        else
+        {
+            //Do nothing
+        }
+    }
+
+    //TO GET THE VALUES OF THE FIELD HAVE A FUNCTION THAT ACCEPTS THE VALUE OF HEX ONLY OR RBG ONLY
+    //BASED ON WHETER THEY ARE ACTIVE OR NOT
+</script>
+</body>
+</html>
+

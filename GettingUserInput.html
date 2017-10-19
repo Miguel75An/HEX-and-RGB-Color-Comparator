@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getting User Input</title>
+</head>
+<body>
+<h1>Getting User Input</h1>
+
+Name: <input type="text" id="myText" value="#HexColorHere">
+
+<p><strong>Click the button to push the #HexColor to an array.</strong></p>
+
+<button onclick="pushColor()">Push Color</button>
+
+<script>
+    var hcolors = ["a","b","c","d"];
+
+    function shifter(newcolor)      //Shifters the hcolors array to the right to accomodate for a new incoming color while deleting the last one
+    {
+        for(var j = hcolors.length - 1; j > 0; j--)
+        {
+            hcolors[j] = hcolors[j-1];
+        }
+        hcolors[j] = newcolor;
+    }
+
+    function pushColor()
+    {
+        var newUserColor = document.getElementById("myText").value;
+
+        shifter(newUserColor);
+        alert(hcolors);
+        //document.write(hcolors + '<br>');
+    }
+
+    //document.write(hcolors + '<br>');
+
+</script>
+</body>
+</html>

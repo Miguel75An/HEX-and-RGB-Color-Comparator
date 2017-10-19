@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing</title>
+</head>
+<body>
+
+<h1>Testing With Rectangles</h1>
+
+<canvas id="MyRectangle" width="500" height="500" style="border:1px solid #d3d3d3;">No support for canvas HTML5.</canvas>
+
+<script>
+
+    var c = document.getElementById("MyRectangle");
+    var ctx = c.getContext("2d");
+    //rect(x cor, y cor, width, height) for rectangles
+    ctx.rect(20,20,150,100);
+    ctx.stroke();
+
+    //same as rect() but fills the inside
+    ctx.fillRect(100,100,150,100);
+
+    //for a color modification
+    ctx.fillStyle = '#0000ff';
+    ctx.fillRect(200,200,150,100);
+
+</script>
+</body>
+</html>

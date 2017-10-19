@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Adding</title>
+</head>
+<body>
+
+<h1>Hey there I hope to se an image the moment i click the following button</h1>
+
+<div id="myImages">
+<img class="myPictures" src="lock-16.png">
+
+<a href="#" class="myButton" onclick="addImg()">-Click to see another one-</a>
+
+</div>
+
+
+<script>
+
+    function addImg()
+    {
+        var newImage = new Image();
+        newImage.src = 'lock-16.png';
+
+        var div = document.getElementById('myImages');
+
+        div.appendChild(newImage);
+    }
+</script>
+</body>
+</html>

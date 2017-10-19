@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset:utf-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function thisindex(elm)
+    {
+        var the_li = elm;
+        var the_ul = elm.parentNode;
+        var li_list = the_ul.childNodes;
+        var count = 0; // Tracks the index of LI nodes
+
+        // Step through all the child nodes of the UL
+        for( var i = 0; i < li_list.length; i++ )
+        {
+            var node = li_list.item(i);
+            if( node )
+            {
+                // Check to see if the node is a LI
+                if( node.nodeName == "LI" )
+                {
+                    // Check to see if this node is the one passed in
+                    if( the_li == node )
+                    {
+                        // If so, alert the current count
+                        alert(count);
+                    }
+                    // Increment the count of LI nodes
+                    count++;
+                }
+            }
+        }
+    }
+
+    //alert(ev.target.parentNode.parentNode.parentNode.parentNode); accesing parent nodes again and again
+</script>
+<ul>
+    <li onmouseover="thisindex(this);">some text</li>
+    <li onmouseover="thisindex(this);">some text</li>
+    <li onmouseover="thisindex(this);">some text</li>
+    <li onmouseover="thisindex(this);">some text</li>
+</ul>
+</body>
+</html>

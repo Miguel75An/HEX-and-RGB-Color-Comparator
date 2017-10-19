@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using Web Fonts on Canvas</title>
+
+    <!--Following is a link to find where the font is donwloaded from.-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=La+Belle+Aurore" />
+
+    <!--Following are the modified tag elements for HTML only using the new font!-->
+    <style type ='text/css'>
+        h1 {
+            font-family: "La Belle Aurore";
+            font-size: 55px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 26.4px;
+        }
+        h3 {
+            font-family: "La Belle Aurore";
+            font-size: 14px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 15.4px;
+        }
+        p {
+            font-family: "La Belle Aurore";
+            font-size: 14px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 20px;
+        }
+        blockquote {
+            font-family: "La Belle Aurore";
+            font-size: 17.5px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 25px;
+        }
+        pre {
+            font-family: "La Belle Aurore";
+            font-size: 13px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 18.5714px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--The font is automatically applied to h1 tags since we specified it as a style on the header-->
+<h1><strong>The Night of Nights </strong></h1>
+
+<!-- Canvas space in which we would like to see our fonts -->
+<canvas id="MyWritingSpace" width=700 height=500 style="border:1px solid #d3d3d3;" ></canvas>
+
+<script>
+
+    //WebFontConfig is a gloabal wariable used by the Web Font Loader to know which font it is using.
+    //It is called a configuration variable. You can have TypeKit and Google fonts specfied below
+    //In our case, we have a custom font.
+    WebFontConfig = {
+            custom: { families: ['La Belle Aurore']},
+            active: function () {writeOnCanvas();} //writeOnCanvas() is defined below. Since fonts are loaded we can write to canvas calling this.
+        };
+
+    //Not 100% sure about the below code, but the second line invokes the WebFont Loader into our page.
+    (function(){
+        var wf = document.createElement("script");
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js'; //WebFont Loader
+        wf.async = 'true';
+        document.head.appendChild(wf);
+    })();
+
+    var c   = document.getElementById("MyWritingSpace");
+    var ctx = c.getContext("2d");
+
+    //Function that writes on canvas using the Web Font
+    function writeOnCanvas()
+    {
+        ctx.font = "40px La Belle Aurore";
+        ctx.fillText("Is this where the thriving nights start?",20,50);
+        ctx.fillText("Oh, the fallen rise without resentment.",20,100);
+        ctx.fillText("Perhaps...but succumbing to fear is no",20,150);
+        ctx.fillText("longer a choice in such place.",20,200);
+        ctx.fillText("And.Aren't we armed with valor!",20,250);
+        ctx.fillText("The shields of vigor are fervid.",20,300);
+        ctx.fillText("First or Last this battle has an end.",20,350);
+        ctx.fillText("To defend our honor, our light!",20,400);
+        ctx.fillText("Let us fight with faith and hope...",20,450);
+    }
+
+</script>
+
+<p>-Aria</p>
+</body>
+</html>

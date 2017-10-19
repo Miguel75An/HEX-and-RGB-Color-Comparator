@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lists</title>
+</head>
+<body>
+<ul id="myUL">
+    <li>0 Hit the gym</li>
+    <li>1 Pay bills</li>
+    <li>2 Meet Aria</li>
+    <li>3 Buy eggs</li>
+    <li>4 Read a book</li>
+    <li>5 Organize office</li>
+    <li>6 Buy a doge</li>
+    <li>7 Sell that street cat</li>
+</ul>
+
+<script>
+/*function newElement() {
+var li = document.createElement("li");
+var inputValue = document.getElementById("myInput").value;
+var t = document.createTextNode(inputValue);
+li.appendChild(t);
+
+if (inputValue === '') {
+alert("You must write something!");
+} else {
+//document.getElementById("myUL").appendChild(li); //This one adds li element to bottom
+//var valuenode = document.getElementById('myUL').childNodes[0].value;
+//alert(valuenode); */
+
+document.getElementById('myUL').childNodes[0].data = "loololololoo";
+document.getElementById('myUL').childNodes[2].data = "ICANTOADSEFSD";
+
+document.write((document.getElementById('myUL').childNodes[0].data + '0<br>' +
+document.getElementById('myUL').childNodes[1].innerHTML + '1<br>' +
+document.getElementById('myUL').childNodes[2].data + '2<br>' +
+document.getElementById('myUL').childNodes[3].innerHTML + '3<br>' +
+document.getElementById('myUL').childNodes[4] + '4<br>' +
+document.getElementById('myUL').childNodes[5].innerHTML + '5<br>' +
+document.getElementById('myUL').childNodes[6] + '6<br>' +
+document.getElementById('myUL').childNodes[7].innerHTML + '7<br>' +
+document.getElementById('myUL').childNodes[8] + '8<br>' +
+document.getElementById('myUL').childNodes[9].innerHTML + '9<br>' +
+document.getElementById('myUL').childNodes[10] + '10<br>' +
+document.getElementById('myUL').childNodes[11].innerHTML + '11<br>' +
+document.getElementById('myUL').childNodes[12] + '12<br>' +
+document.getElementById('myUL').childNodes[13].innerHTML + '13<br>' +
+document.getElementById('myUL').childNodes[14] + '14<br>' +
+document.getElementById('myUL').childNodes[15].innerHTML + '15<br>' +
+document.getElementById('myUL').childNodes[16] + '16<br>' +
+document.getElementById('myUL').childNodes[17] + '17<br>' +
+document.getElementById('myUL').childNodes[18] + '18<br>'));
+
+/*// alert((document.getElementById('myUL').childNodes[15].innerHTML));
+document.getElementById('myUL').removeChild(document.getElementById('myUL').childNodes[15])  ; //Remove last item in list
+document.getElementById('myUL').insertBefore(li,document.getElementById('myUL').childNodes[0]); //Insert new item to list at top
+
+}
+document.getElementById("myInput").value = ""; //Clears input box after clicking Add
+
+var span = document.createElement("SPAN");
+
+//var newImage = new Image();
+//newImage.src = 'lock-16.png'; //LOCK IMAGE
+//span.className = "close";
+//span.appendChild(newImage); //ADDDS LOCK
+li.appendChild(span);
+
+/*for (i = 0; i < close.length; i++) {
+close[i].onclick = function() {
+var div = this.parentElement;
+div.style.display = "none";
+}
+} */
+//}
+</script>
+
+</body>
+</html>
+
+<!--///BIG DISCOVERY ABOUT LISTS
+//LIST ITMES DENOTRED BY <LI></LI> ARE ODD NUMBER CHILDNODES
+//WHILE TEXT OBJECTS ARE SANDIWHICH THEM IN BETWEEN, AND THEY ARE EVEN CHILDNODES -->

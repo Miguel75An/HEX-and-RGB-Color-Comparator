@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Field Selection With Buttons</title>
+</head>
+<body>
+
+<h1>Text Field Selection with Buttons</h1>
+
+<div>
+    <button onclick="disabler1()">HEX</button>
+
+    <strong>Hexadecimal</strong>: <input type="text" class="hexTextc" id="HexText" value="#HexColorHere">
+</div>
+<br><br/>
+<div>
+    <button onclick="disabler2()">RGB</button>
+    <strong>R</strong>: <input type="text" class="rgbText" id="rgbText1" value="">
+    <strong>G</strong>: <input type="text" class="rgbText" id="rgbText2" value="">
+    <strong>B</strong>: <input type="text" class="rgbText" id="rgbText3" value="">
+</div>
+
+<script>
+
+    //Initial state of text fields
+    document.getElementById('HexText').disabled = false;
+    document.getElementById('rgbText1').disabled = true;
+    document.getElementById('rgbText2').disabled = true;
+    document.getElementById('rgbText3').disabled = true;
+
+    function disabler1()
+    {
+       if(document.getElementById('HexText').disabled === false)
+       {
+           //do nothing
+       }
+       else
+       {    //Enable hexfield
+           document.getElementById('HexText').disabled = false;
+           //Disable RGB fields
+           document.getElementById('rgbText1').disabled = true;
+           document.getElementById('rgbText2').disabled = true;
+           document.getElementById('rgbText3').disabled = true;
+       }
+    }
+
+    function disabler2()
+    {
+        if(document.getElementById('HexText').disabled === false)
+        {
+            //Enable RBG text fields
+            document.getElementById('rgbText1').disabled = false;
+            document.getElementById('rgbText2').disabled = false;
+            document.getElementById('rgbText3').disabled = false;
+            //Disable Hex text field
+            document.getElementById('HexText').disabled = true;
+        }
+        else
+        {
+            //Do nothing
+        }
+    }
+
+    //TO GET THE VALUES OF THE FIELD HAVE A FUNCTION THAT ACCEPTS THE VALUE OF HEX ONLY OR RBG ONLY
+    //BASED ON WHETER THEY ARE ACTIVE OR NOT
+</script>
+</body>
+</html>
